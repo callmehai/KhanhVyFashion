@@ -19,14 +19,24 @@ document.addEventListener("DOMContentLoaded", () => {
         body: new FormData(form)
     });
 
-    alert("✅ Đặt hàng thành công! Shop sẽ liên hệ với bạn trong ít phút.");
+    showSuccessMessage();
     form.reset();
     } catch {
     alert("❌ Lỗi gửi đơn, vui lòng thử lại.");
     }
 
     btn.disabled = false;
-    btn.innerText = "MUA NGAY";
+    btn.innerText = "ĐẶT HÀNG NGAY 🛒";
   });
 });
+
+function showSuccessMessage() {
+  const successMessage = document.getElementById("successMessage");
+  successMessage.style.display = "flex";
+}
+
+function closeSuccessMessage() {
+  const successMessage = document.getElementById("successMessage");
+  successMessage.style.display = "none";
+}
 
